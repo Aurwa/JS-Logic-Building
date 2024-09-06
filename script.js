@@ -1,8 +1,3 @@
-document.write("Hello World");
-
-let sqrt = Math.sqrt(64);
-// console.log(sqrt);
-
 // calculating area of a triangle
 /*
 let sideOne = Number(prompt("Enter side one: "));
@@ -183,13 +178,77 @@ for (let i of arr1) {
 */
 
 // Calculate the Product of All Elements in an Array Except Self Without Division
+/*
+function productArrays(nums) {
+  let length = nums.length;
 
-function productArrays(arr) {
-  let length = arr.length;
+  let leftProducts = new Array(length).fill(1);
+  let rightProducts = new Array(length).fill(1);
 
-  let leftProduct = new Array(length).fill(1);
-  let rightProduct = new Array(length).fill(1);
-  console.log(leftProduct);
+  for (let i = 1; i < length; i++) {
+    leftProducts[i] = leftProducts[i - 1] * nums[i - 1];
+  }
+
+  for (let i = length - 2; i >= 0; i--) {
+    rightProducts[i] = rightProducts[i + 1] * nums[i + 1];
+  }
+
+  const res = new Array(length);
+
+  for (let i = 0; i < length; i++) {
+    res[i] = leftProducts[i] * rightProducts[i];
+  }
+  return res;
 }
 
-productArrays([1, 2, 3, 4]);
+const ans = productArrays([1, 2, 3, 4]);
+console.log(ans);
+*/
+
+// Convert kilometers to miles
+/*
+let km = prompt("Enter kms: ");
+let miles = km * 0.621371;
+console.log(miles);
+*/
+
+//  Convert Celsius to Fahrenheit
+/*
+let celcius = prompt("Enter temperature in Cel: ");
+
+let tempFah = celcius * 1.8 + 32;
+console.log(tempFah);
+*/
+
+// Program to Check if a number is Positive, Negative, or Zero
+/*
+function checkNum(n) {
+  if (n > 0) {
+    console.log("Number is positive.");
+  } else if (n < 0) {
+    console.log("Number is negative");
+  } else {
+    console.log("Number is 0");
+  }
+}
+
+checkNum(0);
+*/
+
+// check if number is prime or not
+
+function isPrime(n) {
+  if (n <= 1) return false;
+  if (n === 2) return true;
+
+  for (let i = 2; i < n; i++) {
+    if (n % i === 0) {
+      return false;
+    }
+  }
+  return true;
+}
+
+console.log(isPrime(9));
+console.log(isPrime(11));
+console.log(isPrime(27));
